@@ -1,59 +1,101 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f4f7fc;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a2a3a;
+    padding: 14px 30px;
+    border-radius: 10px;
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
+    flex-wrap: wrap;
+}
+.navbar .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.nav-menu a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1.05rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+.nav-menu a:hover {
+    background: #4fc3f7;
+    color: #1a2a3a;
+}
 
-/* Container pakai flexbox */
 .card-container {
     display: flex;
-    gap: 20px;
-    max-width: 900px;
-    width: 100%;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-/* Card */
 .card {
-    background: #ffffff;
-    padding: 30px 20px;
+    flex: 1;
+    min-width: 250px;
+    background: #fff;
+    padding: 30px 24px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     border: 2px solid #4f7eb3;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     text-align: center;
-    flex: 1; /* agar semua card sama lebar */
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 .card h3 {
     color: #1a3a5c;
-    font-size: 1.5rem;
-    margin-bottom: 8px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }
 .card p {
     color: #2d4059;
     font-size: 1rem;
+    line-height: 1.5;
 }
 
-/* === Responsif HP: card menjadi vertikal === */
 @media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        padding: 16px 20px;
+    }
+    .nav-menu {
+        justify-content: center;
+        gap: 15px;
+    }
     .card-container {
-        flex-direction: column; /* berubah jadi vertikal */
+        flex-direction: column;
         align-items: center;
     }
     .card {
         width: 100%;
-        max-width: 350px;
+        max-width: 380px;
     }
 }
